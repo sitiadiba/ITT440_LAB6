@@ -9,7 +9,7 @@ ok_message = '\nHTTP/1.0 200 OK\n\n'
 nok_message = '\nHTTP/1.0 404 NotFound\n\n'
 
 def process_start(s_sock):
-    s_sock.send(str.encode("Online Calculator using Python \n Function : LOG, SQUARE ROOT, EXPONENTIAL \n How to use: log/sqrt/exp <number>\n Example: exp 29\n\t\tType 'exit' to close"))
+    s_sock.send(str.encode("-----Welcome to Python Calculator----- \n Function :\tLOG(log)\n\tSQUARE ROOT(sqrt) EXPONENTIAL(exp) \n\t Format to use: log/sqrt/exp <num>\n\t\t 'exit' to close"))
     while True:
         data = s_sock.recv(2048)
         data = data.decode("utf-8")
@@ -32,7 +32,7 @@ def process_start(s_sock):
                 answer = ('Error!')
         
             sendAnswer = (str(op) + '(' + str(num) + ') = ' + str(answer))
-            print ('Calculation done!')
+            print ('Yahoo, calculated!')
         except:
             print ('Invalid input')
             sendAnswer = ('Invalid input')
